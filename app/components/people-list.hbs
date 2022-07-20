@@ -1,0 +1,14 @@
+{{page-title 'Scientists'}}
+<h2>{{@title}}</h2>
+
+<ul>
+  {{#each @people as |person|}}
+    <li>
+      {{! Can use this as the action too }}
+      {{!--{{action 'showPerson' person.id on='click'}} --}}
+      <button type='button' {{on 'click' (fn this.showPerson person.id)}}>
+        {{person.title}}
+      </button>
+    </li>
+  {{/each}}
+</ul>
